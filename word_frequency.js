@@ -32,7 +32,7 @@ const STOP_WORDS = [
 
 function printWordFreq(file, callback) {
   // Read in `file` and print out the frequency of words in that file.
-  fs.readFile("the-hill-we-climb.txt", "utf8", (err, data) => {
+  fs.readFile("test-file.txt", "utf8", (err, data) => {
     if (err) {
       console.error("Error reading the file:", err);
       process.exit(1);
@@ -49,7 +49,6 @@ function printWordFreq(file, callback) {
         wordFrequency[word] = 1;
       }
     }
-    // return wordFrequency;
 
     console.log("Initial data read from file: ", data);
     callback(wordFrequency);
