@@ -40,10 +40,11 @@ function printWordFreq(file, callback) {
     // TODO: write code to count the words in the file
 
     const words = data.split(/\W+/);
-    // data.filter()
+    const lowerCase = words.map((word) => word.toLocaleLowerCase());
+
     const wordFrequency = {};
 
-    for (const word of words) {
+    for (const word of lowerCase) {
       if (STOP_WORDS.includes(word)) {
         continue;
       }
@@ -54,7 +55,8 @@ function printWordFreq(file, callback) {
       }
     }
 
-    console.log("Initial data read from file: ", data);
+    console.log("Initial data read from file: ", "test-file.txt");
+    console.log(file);
     callback(wordFrequency);
   });
 }
